@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.ahmadullahpk.alldocumentreader.adapters_All.TableEventListener;
@@ -27,7 +29,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSVViewer_Activity extends BaseActivity {
+public class CSVViewer_Activity extends AppCompatActivity {
 
     ActivityCsvViewerBinding binding;
     private CustomFrameLayout.Builder toolbarBuilder;
@@ -45,6 +47,7 @@ public class CSVViewer_Activity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        EdgeToEdge.enable(this);
         try {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         } catch (Exception e) {

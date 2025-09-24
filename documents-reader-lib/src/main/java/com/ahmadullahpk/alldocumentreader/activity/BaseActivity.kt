@@ -19,6 +19,7 @@ import com.ahmadullahpk.alldocumentreader.util.Utility
 import com.ahmadullahpk.alldocumentreader.util.ViewUtils
 
 open class BaseActivity : AppCompatActivity() {
+
     public var PERMISSIONS_LIST = arrayOf(
         Manifest.permission.WRITE_EXTERNAL_STORAGE ,
         Manifest.permission.READ_EXTERNAL_STORAGE
@@ -50,47 +51,47 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    protected fun hasReadStoragePermission(): Boolean {
-        if (Build.VERSION.SDK_INT >= 30) {
-            return Environment.isExternalStorageManager()
-        }
-        if (Build.VERSION.SDK_INT >= 29) {
-            val n = ActivityCompat.checkSelfPermission(
-                this.applicationContext,
-                Manifest.permission.READ_EXTERNAL_STORAGE
-            )
-            return n == 0
-        }
-        if (Build.VERSION.SDK_INT >= 23) {
-            val n = ActivityCompat.checkSelfPermission(
-                this.applicationContext,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-            )
-            return n == 0
-        }
-        return true
-    }
+//    protected fun hasReadStoragePermission(): Boolean {
+//        if (Build.VERSION.SDK_INT >= 30) {
+//            return Environment.isExternalStorageManager()
+//        }
+//        if (Build.VERSION.SDK_INT >= 29) {
+//            val n = ActivityCompat.checkSelfPermission(
+//                this.applicationContext,
+//                Manifest.permission.READ_EXTERNAL_STORAGE
+//            )
+//            return n == 0
+//        }
+//        if (Build.VERSION.SDK_INT >= 23) {
+//            val n = ActivityCompat.checkSelfPermission(
+//                this.applicationContext,
+//                Manifest.permission.WRITE_EXTERNAL_STORAGE
+//            )
+//            return n == 0
+//        }
+//        return true
+//    }
 
-    protected fun hideSystemUI() {
-        val decorView = window.decorView
-        decorView.systemUiVisibility = 3846
-        decorView.setOnSystemUiVisibilityChangeListener { i: Int ->
-            showAndHide(
-                i and 4 == 0
-            )
-        }
-    }
+//    protected fun hideSystemUI() {
+//        val decorView = window.decorView
+//        decorView.systemUiVisibility = 3846
+//        decorView.setOnSystemUiVisibilityChangeListener { i: Int ->
+//            showAndHide(
+//                i and 4 == 0
+//            )
+//        }
+//    }
 
-    private fun showAndHide(z: Boolean) {
-        val linearLayout = findViewById<CustomFrameLayout>(R.id.appToolbar) ?: return
-        if (z) {
-            linearLayout.visibility = View.VISIBLE
-        } else {
-            linearLayout.visibility = View.GONE
-        }
-    }
+//    private fun showAndHide(z: Boolean) {
+//        val linearLayout = findViewById<CustomFrameLayout>(R.id.appToolbar) ?: return
+//        if (z) {
+//            linearLayout.visibility = View.VISIBLE
+//        } else {
+//            linearLayout.visibility = View.GONE
+//        }
+//    }
 
-    fun checkAndLunchActivity(intent: Intent?) {
+   /* fun checkAndLunchActivity(intent: Intent?) {
         starterActivity = intent
         when {
             hasReadStoragePermission() -> {
@@ -114,44 +115,44 @@ open class BaseActivity : AppCompatActivity() {
                 ActivityCompat.requestPermissions(this, PERMISSIONS_LIST, 112)
             }
         }
-    }
+    }*/
 
-    var someActivityResultLauncher =
+  /*  var someActivityResultLauncher =
         registerForActivityResult(StartActivityForResult()) { activityResult: ActivityResult ->
             if (activityResult.resultCode == -1) {
                 startActivity(starterActivity)
                 finish()
             }
         }
+*/
+//    open fun setStatusBar() {
+//        isTransparentEnabled(true)
+//    }
 
-    open fun setStatusBar() {
-        isTransparentEnabled(true)
-    }
+//    open fun isTransparentEnabled(z: Boolean) {
+//        setTransparentForWindow(z, false)
+//    }
 
-    open fun isTransparentEnabled(z: Boolean) {
-        setTransparentForWindow(z, false)
-    }
+//    open fun setTransparentForWindow(z: Boolean, z2: Boolean) {
+//        val window = window
+//        if (Build.VERSION.SDK_INT >= 23) {
+//            window.decorView.systemUiVisibility = ViewUtils.setWidth(z, z2)
+//            window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
+//        } else if (Build.VERSION.SDK_INT == 21 || Build.VERSION.SDK_INT == 22) {
+//            window.statusBarColor = ContextCompat.getColor(this, R.color.black)
+//            window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
+//        }
+//    }
 
-    open fun setTransparentForWindow(z: Boolean, z2: Boolean) {
-        val window = window
-        if (Build.VERSION.SDK_INT >= 23) {
-            window.decorView.systemUiVisibility = ViewUtils.setWidth(z, z2)
-            window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
-        } else if (Build.VERSION.SDK_INT == 21 || Build.VERSION.SDK_INT == 22) {
-            window.statusBarColor = ContextCompat.getColor(this, R.color.black)
-            window.navigationBarColor = ContextCompat.getColor(this, R.color.black)
-        }
-    }
-
-    open fun adaptFitsSystemWindows(view: View?) {
-        if (view != null) {
-            view.fitsSystemWindows = false
-            if (view is ViewGroup) {
-                val childCount = view.childCount
-                for (i in 0 until childCount) {
-                    view.getChildAt(i).fitsSystemWindows = false
-                }
-            }
-        }
-    }
+//    open fun adaptFitsSystemWindows(view: View?) {
+//        if (view != null) {
+//            view.fitsSystemWindows = false
+//            if (view is ViewGroup) {
+//                val childCount = view.childCount
+//                for (i in 0 until childCount) {
+//                    view.getChildAt(i).fitsSystemWindows = false
+//                }
+//            }
+//        }
+//    }
 }

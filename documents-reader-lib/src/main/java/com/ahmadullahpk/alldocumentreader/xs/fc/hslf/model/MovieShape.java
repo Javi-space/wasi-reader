@@ -19,6 +19,7 @@ package com.ahmadullahpk.alldocumentreader.xs.fc.hslf.model;
 
 import com.ahmadullahpk.alldocumentreader.xs.fc.ddf.EscherContainerRecord;
 import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.record.*;
+import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.record.Record;
 import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.usermodel.SlideShow;
 
 

@@ -23,6 +23,7 @@ import java.util.Vector;
 import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.model.textproperties.AutoNumberTextProp;
 import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.model.textproperties.TextPropCollection;
 import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.record.*;
+import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.record.Record;
 import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.usermodel.RichTextRun;
 import com.ahmadullahpk.alldocumentreader.xs.fc.hslf.usermodel.SlideShow;
 import com.ahmadullahpk.alldocumentreader.xs.fc.util.StringUtil;

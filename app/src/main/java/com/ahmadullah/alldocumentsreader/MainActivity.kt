@@ -103,20 +103,21 @@ class MainActivity : AppCompatActivity() {
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setCancelable(true)
         val txt_yes = dialog.findViewById<TextView>(R.id.txt_yes)
-        val txt_no = dialog.findViewById<TextView>(R.id.txt_no)
+//        val txt_no = dialog.findViewById<TextView>(R.id.txt_no)
         txt_yes.setOnClickListener {
             dialog.dismiss()
             finishAffinity()
         }
-        txt_no.setOnClickListener {
-            dialog.dismiss()
-        }
+//        txt_no.setOnClickListener {
+//            dialog.dismiss()
+//        }
         if (dialog != null) {
             dialog.show()
         }
     }
 
     override fun onBackPressed() {
+        super.onBackPressed()
         dialog_exit()
     }
 

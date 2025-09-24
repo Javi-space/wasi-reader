@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.Window
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.ahmadullahpk.alldocumentreader.toasty
 import com.ahmadullahpk.alldocumentreader.util.Utility
@@ -19,6 +20,7 @@ class All_Document_Reader_Activity : AppCompatActivity() {
     var filepath: String? = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS)
 
         val intent = intent
@@ -51,11 +53,11 @@ class All_Document_Reader_Activity : AppCompatActivity() {
                 var m_intent : Intent ? = null
                 val fileType = MainConstant.getFileType(str)
                 m_intent = Intent(this, ViewFiles_Activity::class.java)
-                if(filepath!!.endsWith("pdf")){
-                    m_intent = Intent(this, PDF_Reader_Activity::class.java)
-                    m_intent.action = "android.intent.action.VIEW";
-                    m_intent.data = Uri.fromFile( File(filepath));
-                }
+//                if(filepath!!.endsWith("pdf")){
+//                    m_intent = Intent(this, PDF_Reader_Activity::class.java)
+//                    m_intent.action = "android.intent.action.VIEW";
+//                    m_intent.data = Uri.fromFile( File(filepath));
+//                }
                 if(filepath!!.endsWith("rtf")){
                     m_intent = Intent(this, ViewRtf_Activity::class.java)
                 }

@@ -1,5 +1,7 @@
 package com.ahmadullahpk.alldocumentreader.activity;
 
+import static android.content.Intent.getIntent;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -14,7 +16,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.ahmadullahpk.alldocumentreader.databinding.ActivityViewFilesBinding;
@@ -35,7 +39,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewFiles_Activity extends BaseActivity implements IMainFrame {
+public class ViewFiles_Activity extends AppCompatActivity /*BaseActivity*/ implements IMainFrame {
 
     ActivityViewFilesBinding binding;
     private static final String TAG = ViewFiles_Activity.class.getSimpleName();
@@ -57,7 +61,7 @@ public class ViewFiles_Activity extends BaseActivity implements IMainFrame {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        EdgeToEdge.enable(this);
         try {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         } catch (Exception e) {
@@ -383,10 +387,10 @@ public class ViewFiles_Activity extends BaseActivity implements IMainFrame {
     }
 
 
-    private void maximiseScreen() {
-        hideSystemUI();
-
-    }
+//    private void maximiseScreen() {
+//        hideSystemUI();
+//
+//    }
 
     private void shareFile() {
         Intent intent = new Intent(Intent.ACTION_SEND);
