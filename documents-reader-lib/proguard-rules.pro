@@ -19,3 +19,10 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class com.ahmadullah.alldocumentsreader.datatype.** { *; }
+
+-keep class com.ahmadullah.alldocumentsreader.xs.fc.dom4j.** { *; }
+-keep class com.ahmadullah.alldocumentsreader.xs.fc.hslf.** { *; }
+-keep class com.ahmadullah.alldocumentsreader.xs.fc.ddf.** { *; }
+ 
