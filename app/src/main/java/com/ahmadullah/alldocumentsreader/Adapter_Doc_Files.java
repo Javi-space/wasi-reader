@@ -25,7 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 
-import com.ahmadullahpk.alldocumentreader.activity.All_Document_Reader_Activity;
+//import com.ahmadullahpk.alldocumentreader.activity.All_Document_Reader_Activity;
 
 import java.io.File;
 import java.text.DecimalFormat;
@@ -247,10 +247,10 @@ public class Adapter_Doc_Files extends RecyclerView.Adapter<Adapter_Doc_Files.Vi
 
 
     private void readFile( String path) {
-        Intent intent = new Intent(context, All_Document_Reader_Activity.class);
-        intent.putExtra("path", path);
-        intent.putExtra("fromAppActivity", true);
-        context.startActivity(intent);
+//        Intent intent = new Intent(context, All_Document_Reader_Activity.class);
+//        intent.putExtra("path", path);
+//        intent.putExtra("fromAppActivity", true);
+//        context.startActivity(intent);
     }
 
 
